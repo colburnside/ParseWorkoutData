@@ -28,6 +28,7 @@ Partial Class Form1
         Me.SaveFileDialog4 = New System.Windows.Forms.SaveFileDialog()
         Me.txtDataToParse = New System.Windows.Forms.TextBox()
         Me.btnParse = New System.Windows.Forms.Button()
+        Me.lstResults = New System.Windows.Forms.ListBox()
         Me.SuspendLayout()
         '
         'txtDataToParse
@@ -51,11 +52,23 @@ Partial Class Form1
         Me.btnParse.Text = "Parse"
         Me.btnParse.UseVisualStyleBackColor = True
         '
+        'lstResults
+        '
+        Me.lstResults.FormattingEnabled = True
+        Me.lstResults.ItemHeight = 20
+        Me.lstResults.Location = New System.Drawing.Point(17, 319)
+        Me.lstResults.Name = "lstResults"
+        Me.lstResults.ScrollAlwaysVisible = True
+        Me.lstResults.Size = New System.Drawing.Size(760, 184)
+        Me.lstResults.TabIndex = 2
+        Me.lstResults.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(800, 560)
+        Me.Controls.Add(Me.lstResults)
         Me.Controls.Add(Me.btnParse)
         Me.Controls.Add(Me.txtDataToParse)
         Me.Name = "Form1"
@@ -71,4 +84,5 @@ Partial Class Form1
     Friend WithEvents SaveFileDialog4 As SaveFileDialog
     Friend WithEvents txtDataToParse As TextBox
     Friend WithEvents btnParse As Button
+    Friend WithEvents lstResults As ListBox
 End Class
