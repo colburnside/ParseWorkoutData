@@ -1,4 +1,6 @@
-﻿Public Class Form1
+﻿Imports System.IO
+
+Public Class Form1
     'todo add code to write/append to text file.
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtDataToParse.TextChanged
         btnParse.Enabled = True
@@ -29,6 +31,7 @@
                 lstResults.Items.Add(workoutDate & ", " & exerciseName & "," & weight & ", " & reps)
             End If
         Next
+        btnWriteToFile.Visible = True
     End Sub
 
     Function extractWorkoutDate(ByRef dateLine As String) As Date
@@ -82,4 +85,22 @@
         End If
         extractReps = CInt(tempLine)
     End Function
+
+    Private Sub btnWriteToFile_Click(sender As Object, e As EventArgs) Handles btnWriteToFile.Click
+        Dim dir As String
+        dir = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+
+        Dim strFile As String = dir & "\fitNotes.csv"
+        Dim fileExists As Boolean = File.Exists(strFile)
+        Using sw As New StreamWriter(File.Open(strFile, FileMode.OpenOrCreate))
+            For l_index As Integer = 0 To lstResults.Items.Count - 1
+                Dim l_text As String = CStr(lstResults.Items(l_index))
+                sw.WriteLine(l_text)
+            Next
+            sw.Close()
+            MsgBox("Results written to: " & strFile)
+        End Using
+
+
+    End Sub
 End Class
