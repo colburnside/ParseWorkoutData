@@ -1,4 +1,5 @@
 ﻿Public Class Form1
+    'todo add code to write/append to text file.
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtDataToParse.TextChanged
         btnParse.Enabled = True
     End Sub
