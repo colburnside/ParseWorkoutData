@@ -61,7 +61,22 @@ Public Class Form1
             workoutMonth = 4
         ElseIf InStr(dateLine, "May") Then
             workoutMonth = 5
+        ElseIf InStr(dateLine, "June") Then
+            workoutMonth = 6
+        ElseIf InStr(dateLine, "July") Then
+            workoutMonth = 7
+        ElseIf InStr(dateLine, "August") Then
+            workoutMonth = 8
+        ElseIf InStr(dateLine, "September") Then
+            workoutMonth = 9
+        ElseIf InStr(dateLine, "October") Then
+            workoutMonth = 10
+        ElseIf InStr(dateLine, "November") Then
+            workoutMonth = 11
+        ElseIf InStr(dateLine, "December") Then
+            workoutMonth = 12
         End If
+
         extractWorkoutDate = CDate(workoutMonth & "/" & workoutDay & "/" & dateLine.Substring(dateLine.Length - 4))
     End Function
     Function extractExercise(ByRef lineReadIn As String) As String
