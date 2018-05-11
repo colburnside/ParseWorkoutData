@@ -29,6 +29,7 @@ Partial Class Form1
         Me.txtDataToParse = New System.Windows.Forms.TextBox()
         Me.btnParse = New System.Windows.Forms.Button()
         Me.lstResults = New System.Windows.Forms.ListBox()
+        Me.btnWriteToFile = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtDataToParse
@@ -45,7 +46,7 @@ Partial Class Form1
         'btnParse
         '
         Me.btnParse.Enabled = False
-        Me.btnParse.Location = New System.Drawing.Point(12, 246)
+        Me.btnParse.Location = New System.Drawing.Point(12, 236)
         Me.btnParse.Name = "btnParse"
         Me.btnParse.Size = New System.Drawing.Size(193, 48)
         Me.btnParse.TabIndex = 1
@@ -56,18 +57,29 @@ Partial Class Form1
         '
         Me.lstResults.FormattingEnabled = True
         Me.lstResults.ItemHeight = 20
-        Me.lstResults.Location = New System.Drawing.Point(17, 319)
+        Me.lstResults.Location = New System.Drawing.Point(12, 290)
         Me.lstResults.Name = "lstResults"
         Me.lstResults.ScrollAlwaysVisible = True
         Me.lstResults.Size = New System.Drawing.Size(760, 184)
         Me.lstResults.TabIndex = 2
         Me.lstResults.Visible = False
         '
+        'btnWriteToFile
+        '
+        Me.btnWriteToFile.Location = New System.Drawing.Point(13, 481)
+        Me.btnWriteToFile.Name = "btnWriteToFile"
+        Me.btnWriteToFile.Size = New System.Drawing.Size(192, 54)
+        Me.btnWriteToFile.TabIndex = 3
+        Me.btnWriteToFile.Text = "Save Results"
+        Me.btnWriteToFile.UseVisualStyleBackColor = True
+        Me.btnWriteToFile.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 560)
+        Me.ClientSize = New System.Drawing.Size(800, 597)
+        Me.Controls.Add(Me.btnWriteToFile)
         Me.Controls.Add(Me.lstResults)
         Me.Controls.Add(Me.btnParse)
         Me.Controls.Add(Me.txtDataToParse)
@@ -85,4 +97,5 @@ Partial Class Form1
     Friend WithEvents txtDataToParse As TextBox
     Friend WithEvents btnParse As Button
     Friend WithEvents lstResults As ListBox
+    Friend WithEvents btnWriteToFile As Button
 End Class
