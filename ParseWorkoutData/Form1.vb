@@ -107,7 +107,10 @@ Public Class Form1
 
         Dim strFile As String = dir & "\fitNotes.csv"
         Dim fileExists As Boolean = File.Exists(strFile)
-        Using sw As New StreamWriter(File.Open(strFile, FileMode.OpenOrCreate))
+        If Not fileExists Then
+            System.IO.File.Create(strFile)
+        End If
+        Using sw As New StreamWriter(File.Open(strFile, FileMode.Append))
             For l_index As Integer = 0 To lstResults.Items.Count - 1
                 Dim l_text As String = CStr(lstResults.Items(l_index))
                 sw.WriteLine(l_text)
